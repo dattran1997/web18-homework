@@ -1,0 +1,158 @@
+.background{
+    padding: 5%;
+    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+}
+
+.top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.main{
+    display: flex;
+    border-top: 6px solid #00a5ff;
+    justify-content: center;
+    margin: 0 auto;
+    width: 65%;
+    background-color: white;
+    padding: 1%;
+    list-style-type: none;
+}
+
+.footer{
+    background-color: white;
+    margin: 0 auto;
+    width: 65%;
+    padding: 1%;
+    border-radius: 0px 0px 25px 25px;
+    color: #00a5ff;
+    border-top: 3px solid #00a5ff;
+}
+
+.avatar-box{
+    margin-left: 20%;
+}
+
+.divider{
+    width: 0.9%;
+    background-color: #18e8e8;
+    border-radius: 25px;
+    margin: 1.5% 3%;
+}
+
+.fas {
+    color: #00a5ff;
+}
+
+.items-left{
+    width: 23%;
+}
+
+.items-right{
+    width: 25%;
+}
+
+.items-left .round-container{
+    margin-top: 9%;
+    margin-left: 20%;
+    border-radius: 25px;
+    padding: 5%;
+    background-color: #00c6ff;
+    height: fit-content;
+    height: -moz-fit-content;
+}
+
+.items-left .round-container:hover{
+    background-color: #0072ff;
+    cursor: progress;
+}
+
+.items-left .round-container:active{
+    background-color: #0a58b9;
+    cursor: progress;
+}
+
+.items-right .round-container{
+    margin-top: 8%;
+    margin-right: 15%;
+    border-radius: 25px;
+    padding: 5%;
+    background-color: #00c6ff;    ;
+    height: fit-content;
+    height: -moz-fit-content;
+}
+
+.items-right .round-container:hover{
+    background-color: #0072ff;
+    cursor: progress;
+}
+
+.items-right .round-container:active{
+    background-color: #0a58b9;
+    cursor: progress;
+}
+
+.items-left li{
+    margin-bottom: 78%;
+}
+
+.items-right li{
+    margin-top: 66%;
+    justify-content: end;
+}
+
+.image{
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+}
+
+.image:hover{
+    transform: scale(1.1);
+}
+
+.name{
+    background-color: #28a9ef;
+    color: white;
+    border-radius: 25px;
+    width: fit-content;
+    font-family: 'Times New Roman', Times, serif;
+    width: -moz-fit-content;
+    padding: 5%;
+    margin-top: 10%;
+    margin-left: 25%
+}
+
+.name:hover{
+    background-color: #1679ad;
+    cursor: no-drop;
+}
+
+.social-container{
+    display: flex;
+}
+
+.link{
+    margin-left: 5%;
+}
+
+h1{
+    font-size: 550%;
+    color: #2d95de;
+}
+
+li{
+    display: flex;
+    font-size: 150%;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

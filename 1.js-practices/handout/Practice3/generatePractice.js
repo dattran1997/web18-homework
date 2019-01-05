@@ -75,4 +75,42 @@ function search(input, target) {
 // var array = generate(testArray);
 // console.log(array);
 
+
+// correct ex:
+
+function generate(testLengthArray){
+  for(let i = 0; i <testLengthArray.length;i++){
+    let inputLeght = testLengthArray[i];
+    let item ={
+      "input":[],
+      "target":null,
+      "output":null,
+    }
+    for(let j=0;j<inputLeght;j++){
+      let ran_num = Math.floor(Math.random() * 9999*2) + -9999;
+      item.input.push(ran_num);
+    }
+    item.input.sort(function(a,b) {return a-b});
+    item.target =  Math.floor(Math.random() * inputLeght);
+    item.output = item.input.indexOf(item.target);
+    result.push(item);
+  }
+
+  //call back function(inputLength,index,arr)
+  testArray.forEach(function(inputLength,index,arr)){
+
+  }
+
+  // .map để thay đổi phần tử trong mảng
+  // [1,2,3].map(function(item) {return 
+  //   item 
+  //   // có thể là điều kiện
+  // })
+
+  // .filter
+
+  return result;
+}
+
+
 module.exports = generate

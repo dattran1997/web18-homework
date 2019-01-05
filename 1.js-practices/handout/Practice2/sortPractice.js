@@ -17,8 +17,8 @@ function sort(input) {
   }
   return input;
   // var max;
-  // for(var i = 0; i < input.lenght; i++){
-  //   for(var j =i+1; j < input.lenght; j++){
+  // for(var i = 0; i < input.length; i++){
+  //   for(var j =i+1; j < input.length; j++){
   //     if(input[i] > input[j]){
   //         console.log("i: ",i);
   //         console.log("j: ",j);
