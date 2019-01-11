@@ -1,0 +1,6 @@
+_không nên đặt tên file có dấu cách
+_mỗi pj mới khi cài đặt đều phải chạy npm init để có file packet.json 
+_ file paket.json chứa thông tin về pj và chứa các thư viện cài thêm
+_npm install sẽ tự cài các thư viện còn thiếu trong inpendency or packet.json
+_npm install eslint --save-dev eslint chỉ chạy cho dev nên cài vào mục dev bằng --save-dev
+_npm install packetname -g cài cho toàn máy
