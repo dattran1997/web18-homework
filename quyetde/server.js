@@ -21,9 +21,11 @@ app.get("/", (req,res) => {
         <h1>${randomQuestion.content}</h1>
         <a href="vote/no/${randomQuestion.id}">Sai</a>
         <a href="vote/yes/${randomQuestion.id}">Đúng</a>
+        <a href="question/${randomQuestion.id}">Kết quả vote</a>
+        <a href="question/other">Câu hỏi khác</a>
         `);
     }
-})
+});
 
 // thêm : tên biến vào route để lấy dữ liệu tại / của route đấy
 app.get("/vote/:voteOption/:questionID",(req,res) => {
@@ -50,6 +52,31 @@ app.get("/vote/:voteOption/:questionID",(req,res) => {
     });
     fs.writeFileSync("database.json",JSON.stringify(questions)); 
     res.redirect("/");
+});
+
+//không nên để 2 chức năng có chung 1 gốc route vì js đễ đọc nhầm (đầu - cuối) 
+// eg: vote/question/...
+app.get("/question/:choise", (req,res) => {
+    console.log(req.params.choise);
+    const {choise} = req.params;
+    questions = []
+    try{
+        questions = JSON.parse(fs.readFileSync("database.json","utf-8"));
+    }catch(erorr){
+        console.log('file empty');
+    }   
+    questions.forEach((item,index) =>{
+        if(choise == item.id){
+            res.send(`
+                <h1>${item.content}</h1>
+                <p> yes: ${item.yes}</p>
+                <p> no: ${item.no}</p>
+            `);
+        }else if(choise == "other"){
+            res.redirect("/");
+        }
+    });
+
 });
 
 app.get("/ask", (req,res) => {
