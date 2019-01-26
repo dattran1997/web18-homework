@@ -21,10 +21,12 @@ app.get("/", (req,res) => {
         const randomQuestion = questions[index];
         // <a href="vote/no/${randomQuestion.id}">Sai</a>
         // <a href="vote/yes/${randomQuestion.id}">Đúng</a>
+        // <a href="vote/${randomQuestion.id}?result="yes"">Sai</a>
+        // <a href="vote/${randomQuestion.id}?result="no"">Đúng</a>
         res.send(`
         <h1>${randomQuestion.content}</h1>
-        <a href="vote/${randomQuestion.id}?result="yes"">Sai</a>
-        <a href="vote/${randomQuestion.id}?result="no"">Đúng</a>
+        <button id="yesButton">Đúng</button>
+        <button id="noButton>Sai</button>
         <a href="question/?result=${randomQuestion.id}">Kết quả vote</a>
         <a href="question/?result="other"">Câu hỏi khác</a>
         `);
@@ -132,6 +134,7 @@ app.get("/getTotalQuestion",(req,res) => {
     // status default = 200
     res.status(200).send(answer);
 });
+
 
 // khi chay cẩn thận khi 2 web chay cung 1 port
 app.listen("9999",function(err){

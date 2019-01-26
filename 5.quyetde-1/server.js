@@ -19,21 +19,27 @@ app.get("/", (req,res) => {
         const randomQuestion = questions[index];
         res.send(`
         <h1>${randomQuestion.content}</h1>
-        <a href="vote/no/${randomQuestion.id}">Sai</a>
-        <a href="vote/yes/${randomQuestion.id}">Đúng</a>
-        <a href="question/${randomQuestion.id}">Kết quả vote</a>
+        // <a href="vote/no/${randomQuestion.id}">Sai</a>
+        // <a href="vote/yes/${randomQuestion.id}">Đúng</a>
+        <a href="vote/${randomQuestion.id}?voteOption="yes">Sai</a>
+        <a href="vote/${randomQuestion.id}?voteOption="no">Đúng</a>
+        <a href="question/${randomQuestion.id}?voteOption">Kết quả vote</a>
         <a href="question/other">Câu hỏi khác</a>
         `);
     }
 });
 
+// có 2 cách để truyền biến là dùng param và dùng query (param thì dùng trên đường dẫn và ở tại hàm route thì có dấu : và gọi bằng params 
+// còn query thì chỉ cần truyền biến sau dấu ? nối nhiều biến bằng dấu & và gọi băng query )
+
 // thêm : tên biến vào route để lấy dữ liệu tại / của route đấy
-app.get("/vote/:voteOption/:questionID",(req,res) => {
+app.get("/vote/:questionID",(req,res) => {
     // req.param.quetionID dùng để lấy dữ liệu ra tại route
     console.log(req.params.questionID);
-    console.log(req.params.voteOption);
+    // console.log(req.params.voteOption);
     const {questionID} = req.params;
-    const {voteOption} = req.params;
+    // const {voteOption} = req.params;
+    const {voteOption} = req.query;
 
     let questions = [];
     try{
@@ -43,11 +49,13 @@ app.get("/vote/:voteOption/:questionID",(req,res) => {
     }
     questions.forEach((item,index) => {
         if(item.id == questionID){
-            if(voteOption == "yes"){
-                questions[index].yes +=1;                
-            }else if(voteOption == "no"){
-                questions[index].no +=1;
-            }
+            // if(voteOption == "yes"){
+            //     questions[index].yes +=1;                
+            // }else if(voteOption == "no"){
+            //     questions[index].no +=1;
+            // }
+
+            voteOption == "yes" ? questions[index].yes +=1 : questions[index].no +=1;
         }
     });
     fs.writeFileSync("database.json",JSON.stringify(questions)); 

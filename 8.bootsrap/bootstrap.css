@@ -1,0 +1,101 @@
+.brand{
+    margin-right: 63%;
+    font-weight: 550; 
+}
+
+
+.icon-item h3{
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.icon-item p{
+    font-size: 1.25rem;
+    font-weight: 200;
+}
+
+.container h1{
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 5%;
+}
+
+.icon{
+    margin-bottom: 7%;
+}
+
+.icon i {
+    font-size: 380%;
+    transition: all .3s ease-in-out;
+}
+
+.icon i:hover {
+    transform: scale(1.5);
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    background-image: url(./img/bg-masthead.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 15% 0px;
+}
+
+.img-bottom{
+    display: flex;
+    justify-content: center;
+    background: url(./img/bg-masthead.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 5% 0px;
+}
+
+.feature-icon{
+    padding: 7rem 0px;
+}
+
+.showcase-img{
+    background-size: cover;
+    min-height: 30rem;
+}
+
+.showcase .showcase-text{
+    padding: 7rem;
+}
+
+.showcase-text h2{
+    font-weight: 600;
+}
+
+.testimonials{
+    padding: 8% 0px;
+}
+
+.testimonials h2{
+    font-weight: 600;
+    margin-bottom: 3% !important;
+}
+
+.testimonials-items img{
+    max-width: 12rem;
+    height: auto;
+    margin-bottom: 5%;
+    box-shadow: 0 5px 5px 0 #adb5bd;
+}
+
+.testimonials-items h5{
+    font-weight: 600;
+}
+
+.testimonials-items p{
+    font-weight: 200;
+}
+
+.list-inline-item i{
+    font-size: 200%;
+}
+
+.footer{
+    padding: 3%;
+}
