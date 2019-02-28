@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import SubmitForm from './components/SubmitForm';
+import Video from './components/Video';
 
 class App extends Component {
   state = {
-    videoList: [],
+    videoItems: [],
   }
 
   getInput = (input) =>{
     fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${input}&type=video&key=AIzaSyA9gQZ-oYomFypZN7PsupZJtOfQqA6Q3qw&nex`).
     then(res => res.json({success: true})).
     then(data => {
-      console.log(data)
+      console.log(data);
+      this.setState({
+        videoItems: data.items,
+      });
     })
   }
 
@@ -22,7 +26,7 @@ class App extends Component {
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgc68hab8-SgO-jT8nhCjoDGT-Zlhw30HmqVdrQydXMo9havAP" alt="12"/>
         </div>
         <SubmitForm getInput={this.getInput} />
-        <video />
+        <Video videoItems={this.state.videoItems} />
       </div>
     );
   }
