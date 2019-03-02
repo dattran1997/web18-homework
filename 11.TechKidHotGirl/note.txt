@@ -1,0 +1,2 @@
+tạo script để chạy tắt trong file package.json
+"start": "nodemon server.js"
